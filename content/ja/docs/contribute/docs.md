@@ -80,7 +80,7 @@ classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
 class A,B,C,D,E,F,G,H,M,Q,N,O,P,V grey
 class S,T,U spacewhite
 class first,second,third white
-{{</ mermaid >}}
+{{< /mermaid >}}
 図1. 新たなコントリビューターのためのスタートガイド。
 
 図1は新たなコントリビューターのためのロードマップを概説しています。`サインアップ`や`レビュー`のステップのいくつか、またはその全てに従えばよいです。これで、`プルリクエストのオープン`の下にリストされているいくつかの貢献目標を達成するためのプルリクエストを開く準備が整いました。また、質問はいつでも歓迎です！
@@ -120,7 +120,7 @@ classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
 class A,B,D,E,F,G grey
 class S,T spacewhite
 class first,second white
-{{</ mermaid >}}
+{{< /mermaid >}}
 図2. はじめての貢献のための準備。
 
 - 貢献のための複数の方法について学ぶために[貢献の概要](/ja/docs/contribute/new-content/)を読んでください。

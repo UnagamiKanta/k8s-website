@@ -43,43 +43,34 @@ Kubernetesコミュニティで効果的に働くためには、[git](https://gi
 
 {{< mermaid >}}
 flowchart TB
-subgraph third[プルリクエストのオープン]
-direction TB
-U[ ] -.-
-Q[コンテンツを改善する] --- N[コンテンツを作成する]
-N --- O[ドキュメントを翻訳する]
-O --- P[k8sリリースサイクルの <br>ドキュメントを管理する]
-
+subgraph first[サインアップ]
+    direction TB
+    B["CNCFのコントリビューター<br>ライセンス契約に署名する"] --- C["Slackのsig-docs<br>チャンネルに参加する"]
+    C --- V["kubernetes-sig-docsの<br>メーリングリストに参加する"]
+    V --- M["毎週のsig-docs callsや<br>slack callsに参加する"]
 end
 
 subgraph second[レビュー]
-direction TB
-   T[ ] -.-
-   D[kubernetes/website <br>リポジトリを確認する] --- E[静的サイトジェネレーター <br>Hugoを確認する]
-   E --- F[基本的なGitHubの <br>コマンドを理解する]
-   F --- G[オープンした <br>プルリクエストを確認し <br>レビュープロセスを見直す]
-end
-
-subgraph first[サインアップ]
     direction TB
-    S[ ] -.-
-    B[CNCFの <br>コントリビューターライセンス <br>サインに署名する] --- C[Slackチャンネル <br>sig-docs に<br>参加する]
-    C --- V[kubernetes-sig-docsの<br> メーリングリストに <br>参加する]
-    V --- M[毎週開催している <br>sig-docs callsや<br> slack callsに <br>参加する]
+    D["kubernetes/website<br>リポジトリを確認する"] --- E["静的サイトジェネレーター<br>Hugoを確認する"]
+    E --- F["基本的なGitHubの<br>コマンドを理解する"]
+    F --- G["オープンしたプルリクエストと<br>レビュープロセスを確認する"]
 end
 
-A([fa:fa-user 新たな<br>コントリビューター]) --> first
+subgraph third[プルリクエストのオープン]
+    direction TB
+    Q["コンテンツを改善する"] --- N["コンテンツを作成する"]
+    N --- O["ドキュメントを翻訳する"]
+    O --- P["K8sリリースサイクルの<br>ドキュメントを管理する"]
+end
+
+A(["新たなコントリビューター"]) --> first
 A --> second
 A --> third
-A --> H[質問をする!!!]
+A --> H["質問をする"]
 
-
-classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
-classDef white fill:#ffffff,stroke:#000,stroke-width:px,color:#000,font-weight:bold
-classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
-class A,B,C,D,E,F,G,H,M,Q,N,O,P,V grey
-class S,T,U spacewhite
-class first,second,third white
+classDef step fill:#dddddd,stroke:#666666,color:#000000
+class A,B,C,D,E,F,G,H,M,Q,N,O,P,V step
 {{< /mermaid >}}
 図1. 新たなコントリビューターのためのスタートガイド。
 
@@ -97,29 +88,22 @@ class first,second,third white
 
 {{< mermaid >}}
 flowchart LR
-    subgraph second[はじめての貢献]
-    direction TB
-    S[ ] -.-
-    G[K8sメンバーからの <br>PRレビューを受ける] -->
-    A[最初のPRを作成するための <br>良いissueを <br>kubernetes/websiteから探す] --> B[PRをオープンする!!]
-    end
     subgraph first[推奨される準備]
-    direction TB
-       T[ ] -.-
-       D[コントリビューターの概要を読む] -->E[K8sのコンテンツと<br> スタイルガイドを読む]
-       E --> F[Hugoのページコンテンツタイプと <br>ショートコードについて学ぶ]
+        direction TB
+        D["コントリビューターの概要を読む"] --> E["K8sのコンテンツと<br>スタイルガイドを読む"]
+        E --> F["Hugoのページコンテンツタイプと<br>ショートコードについて学ぶ"]
     end
 
+    subgraph second[はじめての貢献]
+        direction TB
+        A["kubernetes/websiteで<br>最初のPRに適したissueを探す"] --> B["PRをオープンする"]
+        B --> G["K8sメンバーから<br>PRレビューを受ける"]
+    end
 
-    first ----> second
+    first --> second
 
-
-classDef grey fill:#dddddd,stroke:#ffffff,stroke-width:px,color:#000000, font-size:15px;
-classDef white fill:#ffffff,stroke:#000,stroke-width:px,color:#000,font-weight:bold
-classDef spacewhite fill:#ffffff,stroke:#fff,stroke-width:0px,color:#000
-class A,B,D,E,F,G grey
-class S,T spacewhite
-class first,second white
+classDef step fill:#dddddd,stroke:#666666,color:#000000
+class A,B,D,E,F,G step
 {{< /mermaid >}}
 図2. はじめての貢献のための準備。
 
